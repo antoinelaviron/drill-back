@@ -5,9 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    <script>
-		function getParameter(parameterName){
-			let parameters = new URLSearchParams(window.location.search);
-			return parameters.get(parameterName);
+		function getParameter(){
+			var parameters = new URLSearchParams(window.location.search);
+			var entries =parameters.entries();
+            for(pair of entries) { console.log(pair ); } 
+			var first = entries[0];
+			var keys = parameters.keys(); 
+			return first;
 			}
 	</script>
   </head>
@@ -17,8 +21,8 @@
 		<p></p>
 		<h4>Invoice: </h4>
 		<script>
-		getParameter('Invoice');
-                console.log(Invoice);		
+		getParameter();
+                console.log(first);		
 		</script> 
 		<p></p>
 		<p>This Accelerator is configured to allow you to drill back to your Source Application (Salesforce Service Cloud or other) and deep-dive to each invoice.</p>
